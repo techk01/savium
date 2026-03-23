@@ -1,0 +1,2 @@
+import{t as e}from"./rolldown-runtime.uXsZyavj.mjs";function t(e,t){return{description:`Savium`,favicon:`https://framerusercontent.com/assets/M9yZ90kthqVwlJg7t5M6X2a7N0.png`,robots:`max-image-preview:large`,title:`Savium`}}var n=e((()=>{}));export{t as n,n as t};
+//# sourceMappingURL=shared-lib.CibicFZ6.mjs.map
