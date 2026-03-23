@@ -1,0 +1,302 @@
+import {
+    t as e
+} from "./rolldown-runtime.uXsZyavj.mjs";
+import {
+    D as t,
+    I as n,
+    L as r,
+    M as i,
+    N as a,
+    P as o,
+    R as s,
+    S as c,
+    d as l,
+    g as u,
+    h as d,
+    i as f,
+    j as p,
+    m,
+    n as h,
+    o as g,
+    r as _,
+    t as v,
+    v as y,
+    w as b
+} from "./react.6-ZexFtl.mjs";
+import {
+    G as x,
+    H as S,
+    J as C,
+    K as w,
+    Q as T,
+    U as E,
+    W as D,
+    Z as O,
+    dt as k,
+    et as A,
+    f as j,
+    g as M,
+    h as N,
+    i as P,
+    l as F,
+    p as I,
+    rt as L,
+    st as R,
+    vt as z,
+    yt as B
+} from "./framer.MZQtHVtO.mjs";
+async function V({
+    routeId: e,
+    pathVariables: n,
+    localeId: r,
+    collectionItemId: d
+}) {
+    let m = W[e].page.preload(),
+        h = l(N, {
+            children: l(F, {
+                children: l(I, {
+                    children: l(M, {
+                        isWebsite: !0,
+                        environment: `site`,
+                        routeId: e,
+                        pathVariables: n,
+                        routes: W,
+                        collectionUtils: K,
+                        framerSiteId: q,
+                        notFoundPage: w(() => import(`./SitesNotFoundPage.js@1.4.o4-Vz9HV.mjs`)),
+                        isReducedMotion: void 0,
+                        localeId: r,
+                        locales: G,
+                        preserveQueryParams: void 0,
+                        siteCanonicalURL: `https://savium.framer.website`,
+                        EditorBar: s === void 0 ? void 0 : (() => {
+                            if (Y) {
+                                console.log(`[Framer On-Page Editing] Unavailable because navigator is bot`);
+                                return
+                            }
+                            return w(async () => {
+                                s.__framer_editorBarDependencies = {
+                                    __version: 3,
+                                    framer: {
+                                        useCurrentRoute: L,
+                                        useLocaleInfo: R,
+                                        useRouter: k
+                                    },
+                                    react: {
+                                        createElement: l,
+                                        Fragment: a,
+                                        memo: u,
+                                        useCallback: p,
+                                        useEffect: i,
+                                        useRef: t,
+                                        useState: o,
+                                        useLayoutEffect: c
+                                    },
+                                    "react-dom": {
+                                        createPortal: f
+                                    }
+                                };
+                                let {
+                                    createEditorBar: e
+                                } = await import(`https://framer.com/edit/init.mjs`);
+                                return {
+                                    default: e()
+                                }
+                            })
+                        })(),
+                        adaptLayoutToTextDirection: !0,
+                        loadSnippetsModule: new j(() => import(`./RBqrRKBHxkH8KZsp-_KEO786ET4RoLrli007qOx4IOs.Dl1hcKuf.mjs`)),
+                        initialCollectionItemId: d
+                    }),
+                    value: {
+                        autobahnNavigation: !0,
+                        editorBarDisableFrameAncestorsSecurity: !1,
+                        motionDivToDiv: !1,
+                        onPageLocalizationSupport: !0,
+                        onPageMoveTool: !0,
+                        synchronousNavigationOnDesktop: !1,
+                        yieldOnTap: !1
+                    }
+                })
+            }),
+            value: {
+                routes: {}
+            }
+        });
+    return await m, h
+}
+
+function H() {
+    J && s.__framer_events.push(arguments)
+}
+async function U(e, t) {
+    function n(e, t, n = !0) {
+        if (e.caught || s.__framer_hadFatalError) return;
+        let r = t?.componentStack;
+        if (n) {
+            if (console.warn(`Caught a recoverable error. The site is still functional, but might have some UI flickering or degraded page load performance. If you are the author of this website, update external components and check recently added custom code or code overrides to fix the following server/client mismatches:
+`, e, r), Math.random() > .01) return
+        } else console.error(`Caught a fatal error. Please report the following to the Framer team via https://www.framer.com/contact/:
+`, e, r);
+        H(n ? `published_site_load_recoverable_error` : `published_site_load_error`, {
+            message: String(e),
+            componentStack: r,
+            stack: r ? void 0 : e instanceof Error && typeof e.stack == `string` ? e.stack : null
+        })
+    }
+    try {
+        let r, i, a, o, c;
+        if (e) c = JSON.parse(t.dataset.framerHydrateV2), r = c.routeId, i = c.localeId, a = c.pathVariables, o = c.breakpoints, r = O(W, r);
+        else {
+            O(W, void 0);
+            let e = performance.getEntriesByType(`navigation`)[0]?.serverTiming?.find(e => e.name === `route`)?.description;
+            if (e) {
+                let t = new URLSearchParams(e);
+                r = t.get(`id`), i = t.get(`locale`);
+                for (let [e, n] of t.entries()) e.startsWith(`var.`) && (a ??= {}, a[e.slice(4)] = n)
+            }
+            if (!r || !i) {
+                let e = S(W, decodeURIComponent(location.pathname), !0, G);
+                r = e.routeId, i = e.localeId, a = e.pathVariables
+            }
+        }
+        let l = V({
+            routeId: r,
+            localeId: i,
+            pathVariables: a,
+            collectionItemId: c?.collectionItemId
+        });
+        s !== void 0 && (async () => {
+            let e = W[r],
+                t = G.find(({
+                    id: e
+                }) => i ? e === i : e === `default`).code,
+                n = c?.collectionItemId ?? null;
+            if (n === null && e?.collectionId && K) {
+                let r = await K[e.collectionId]?.(),
+                    [i] = Object.values(a);
+                r && typeof i == `string` && (n = await r.getRecordIdBySlug(i, t || void 0) ?? null)
+            }
+            let o = Intl.DateTimeFormat().resolvedOptions(),
+                l = o.timeZone,
+                u = o.locale;
+            await new Promise(e => {
+                document.prerendering ? document.addEventListener(`prerenderingchange`, e, {
+                    once: !0
+                }) : e()
+            }), s.__framer_events.push([`published_site_pageview`, {
+                framerSiteId: q ?? null,
+                version: 2,
+                routePath: e?.path || `/`,
+                collectionItemId: n,
+                framerLocale: t || null,
+                webPageId: e?.abTestingVariantId ?? r,
+                abTestId: e?.abTestId,
+                referrer: document.referrer || null,
+                url: s.location.href,
+                hostname: s.location.hostname || null,
+                pathname: s.location.pathname || null,
+                hash: s.location.hash || null,
+                search: s.location.search || null,
+                timezone: l,
+                locale: u
+            }, `eager`]), await B({
+                priority: `background`,
+                ensureContinueBeforeUnload: !0,
+                continueAfter: `paint`
+            }), document.dispatchEvent(new CustomEvent(`framer:pageview`, {
+                detail: {
+                    framerLocale: t || null
+                }
+            }))
+        })();
+        let u = await l;
+        e ? (z(`framer-rewrite-breakpoints`, () => {
+            T(o), s.__framer_onRewriteBreakpoints?.(o)
+        }), (Y ? e => e() : y)(() => {
+            C(), A(), v(t, u, {
+                onRecoverableError: n
+            })
+        })) : _(t, {
+            onRecoverableError: n
+        }).render(u)
+    } catch (e) {
+        throw n(e, void 0, !1), e
+    }
+}
+var W, G, K, q, J, Y;
+e((() => {
+    if (n(), D(), b(), g(), h(), W = {
+            GT6qugb2A: {
+                elements: {
+                    Dm6J5Q8Dq: `compare`,
+                    Grh6Z4IRb: `security-and-protection`,
+                    LAeebmJva: `faq`,
+                    qhRhEb93r: `how-it-works`,
+                    Yq6XrmItk: `why-ledgernorth`
+                },
+                page: w(() => import(`./tw8R4_ROAwYGesTXd5C3AYuLIsRE5_dzY1zQ2bbujIA.BGb894Ch.mjs`)),
+                path: `/`
+            },
+            oR8VOMRKZ: {
+                elements: {
+                    b6SKwIbsC: `faq`,
+                    hrVtVN1bi: `gold6%`,
+                    T0resmVWi: `why-ledgernorth`,
+                    zX_lYAgf0: `how-it-works`
+                },
+                page: w(() => import(`./TguYnj1FTOeuR3xidNWrFvzhjamRVw59qbQji1nlkWA.CyvDzpTx.mjs`)),
+                path: `/gold-silver`
+            },
+            GbJg5ueLB: {
+                elements: {},
+                page: w(() => import(`./yiyS2sLCyW_bAAiKVifOwZo_HMzmTz6Qv1JM-wxGj3o.DKUKthI-.mjs`)),
+                path: `/contact`
+            },
+            RlXlPt1ue: {
+                elements: {},
+                page: w(() => import(`./NgYB9uvhA0ImuSB1lHsas4d6rebPZjr5Q4k2Z5xPS7M.BWIfTL4D.mjs`)),
+                path: `/terms`
+            },
+            ZyRaC29pS: {
+                elements: {},
+                page: w(() => import(`./6creBFLELxjbFSTDNnZwZRnFgkZ8FZDNsoAOOyU82DM.C5U8GVet.mjs`)),
+                path: `/privacy-policy`
+            },
+            CW5x4Idfp: {
+                elements: {},
+                page: w(() => import(`./TRURt4Ytp2RMTiYaINgutq--lJfJ7JQ-DkT-2QCnUw8.DDjfplpe.mjs`)),
+                path: `/cancellation-and-refund-policy`
+            },
+            kI4N2HJq2: {
+                elements: {},
+                page: w(() => import(`./rUTZvSdoAhYTXBz4lA2iLmibChMmc1Lm3cfUSMIDTCQ.DOc5xjTA.mjs`)),
+                path: `/risk-disclaimer`
+            },
+            fAoW_AN59: {
+                elements: {},
+                page: w(() => import(`./QLKfDBe_HLIanZ32RheA1aQT94JMMvDAbDVIrYcu4pc.DQUXtKog.mjs`)),
+                path: `/dashboard`
+            }
+        }, G = [{
+            code: `en-US`,
+            id: `default`,
+            name: `English`,
+            slug: ``,
+            textDirection: `ltr`
+        }], K = {}, q = `e9fa7df32682a02c25ebc3b99454df3329f0319aa50323369c1731169ea2bb19`, J = typeof document < `u`, Y = J && /bot|-google|google-|yandex|ia_archiver|crawl|spider/iu.test(r.userAgent), J) {
+        s.__framer_importFromPackage = (e, t) => () => l(P, {
+            error: `Package component not supported: "` + t + `" in "` + e + `"`
+        }), s.__framer_events = s.__framer_events || [], E(), x();
+        let e = document.getElementById(`main`);
+        `framerHydrateV2` in e.dataset ? U(!0, e) : U(!1, e)
+    }(function() {
+        J && y(() => {
+            v(document.getElementById(`__framer-badge-container`), l(d, {}, l(m(() => import(`./PX9hIOIVM.C8v1PVv9.mjs`)))))
+        })
+    })()
+}))();
+export {
+    V as getPageRoot
+};
+//# sourceMappingURL=script_main.BOKTscqo.mjs.map
