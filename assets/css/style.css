@@ -5204,7 +5204,7 @@ body {
 		gap: 0;
 		width: 100%;
 		height: min-content;
-		padding: 32px
+		padding:30px 30px;
 	}
 
 	.savium-O2K8G .savium-qonyjv {
@@ -5234,7 +5234,7 @@ body {
 		/*order: 1;*/
 		width: 100%;
 		height: min-content;
-		padding: 64px 64px 128px
+		padding:30px
 	}
 
 	.savium-O2K8G .savium-9xsprw {
@@ -8789,7 +8789,7 @@ NavigationContainer [data-savium-component-type=NavigationContainer]>*,
   color: var(--savium-text-color);
 }
 	.savium-vat8vc{ padding: 0 40px; }
-	.savium-142iz3a{ padding: 30px; }
+	.savium-142iz3a{ padding: 30px!important; }
 	.savium-xwby5t{ display: flex; align-items: center; justify-content: center; text-align: center; }
 	.savium-O2K8G .savium-69hedb {        padding: 30px;
         text-align: center;
