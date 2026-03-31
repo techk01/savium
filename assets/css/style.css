@@ -5289,7 +5289,17 @@ body {
 	.savium-O2K8G .savium-1uw697r {
 		align-self: unset;
 		flex-direction: column;
-		width: 100%
+		width: 100%;
+		text-align:center;
+	}
+
+	.gold { padding: 30px 30px; 
+
+		background: #090909 url(../img/AjV2nuKRAiyCLEo7lI2y3CMTszE.jpg) no-repeat center bottom;
+    background-size:50% auto; /* Set width to 50% of the container's width */
+    background-position: center bottom;
+
+	
 	}
 
 	.savium-O2K8G .savium-1lzszju {
